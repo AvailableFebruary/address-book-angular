@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta name="description" content="Simple add person to people list">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Person to list</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/a04d9e4c1c.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.22.1/ramda.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <span class="navbar-brand">
+                        Add People
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" ng-cloak ng-controller="MainCtrl">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="person in people">
+                {{person.firstName}}
+            </li>
+        </ul>
+        <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" ng-model="newPerson.firstName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" ng-model="newPerson.lastName" class="form-control">
+        </div>
+        <button ng-click="addPerson()">Add Person</button>
+
+    </div>
+</body>
+</html>
