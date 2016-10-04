@@ -2,24 +2,33 @@ angular.module('app', [])
     .controller('MainCtrl', mainController);
 
 function mainController($scope) {
-    $scope.people = [
+    $scope.contacts = [
         {
             firstName: "Matt",
-            lastName: "Smith"
+            lastName: "Smith",
+            profession: "Instructor",
+            phoneNumber: "8598598559",
+            emailAddress: "mattsemailaddress@gmail.com"
         },
         {
             firstName: "Drew",
-            lastName: "House"
+            lastName: "House",
+            profession: "Instructor",
+            phoneNumber: "8598598559",
+            emailAddress: "drewsemailaddress@gmail.com"
         }
     ];
 
-    $scope.newPerson =  {
+    $scope.newContact =  {
         firstName: '',
-        lastName: ''
+        lastName: '',
+        profession: '',
+        phoneNumber: '',
+        emailAddress: ''
     };
 
-    $scope.addPerson = function () {
-        $scope.people.push($scope.newPerson);
-        $scope.newPerson = {};
+    $scope.addContact = function () {
+        $scope.contacts.push($scope.newContact);
+        $scope.newContact = {};
     }
 }

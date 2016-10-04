@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-<meta name="description" content="Simple add person to people list">
+<meta name="description" content="Simple add person to contact list">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add Person to list</title>
     <!-- Latest compiled and minified CSS -->
@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="navbar-header">
                     <span class="navbar-brand">
-                        Add People
+                        Add Contacts
                     </span>
                 </div>
             </div>
@@ -33,19 +33,31 @@
     </header>
     <div class="container" ng-cloak ng-controller="MainCtrl">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="person in people">
-                {{person.firstName}}
-            </li>
+            <li class="list-group-item" ng-repeat="contact in contacts">
+                {{contact.firstName}} {{contact.lastName}} {{contact.profession}} {{contact.phoneNumber}} {{contact.emailAddress}}
+            </li> 
         </ul>
         <div class="form-group">
             <label for="">First Name</label>
-            <input type="text" ng-model="newPerson.firstName" class="form-control">
+            <input type="text" ng-model="newContact.firstName" class="form-control">
         </div>
         <div class="form-group">
             <label for="">Last Name</label>
-            <input type="text" ng-model="newPerson.lastName" class="form-control">
+            <input type="text" ng-model="newContact.lastName" class="form-control">
         </div>
-        <button ng-click="addPerson()">Add Person</button>
+        <div class="form-group">
+            <label for="">Profession</label>
+            <input type="text" ng-model="newContact.profession" class="form-control">
+        </div> 
+        <div class="form-group">
+            <label for="">Phone Number</label>
+            <input type="text" ng-model="newContact.phoneNumber" class="form-control">
+        </div>   
+        <div class="form-group">
+            <label for="">Email Address</label>
+            <input type="text" ng-model="newContact.emailAddress" class="form-control">
+        </div>      
+        <button ng-click="addContact()">Add Person</button>
 
     </div>
 </body>
