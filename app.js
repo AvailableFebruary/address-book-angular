@@ -31,4 +31,9 @@ function mainController($scope) {
         $scope.contacts.push($scope.newContact);
         $scope.newContact = {};
     }
+
+    $scope.seeContact = function() {
+        $scope.contacts;
+
+    }
 }
