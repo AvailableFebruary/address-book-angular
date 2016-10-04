@@ -31,14 +31,20 @@
             </div>
         </nav>
     </header>
-    <div class="container" ng-cloak ng-controller="MainCtrl">
-        <ul class="list-group">
+    <div class="container"  ng-cloak ng-controller="MainCtrl">
+        <div class="row">
+            <div class="col-md-3 col-offset-md-4">
+                <h3> Contacts List </h3>
+            <ul class="list-group">
  
-            <li class="list-group-item" ng-repeat="contact in contacts">
+                <li class="list-group-item" ng-repeat="contact in contacts">
                          <a href="seeContact()"> 
                 {{contact.firstName}} {{contact.lastName}} </a> {{contact.profession}} {{contact.phoneNumber}} {{contact.emailAddress}} 
-            </li> 
-        </ul>
+                </li> 
+             </ul>
+            </div> 
+
+        <div class="col-md-4">
         <div class="form-group">
             <label for="">First Name</label>
             <input type="text" ng-model="newContact.firstName" class="form-control">
@@ -60,7 +66,8 @@
             <input type="text" ng-model="newContact.emailAddress" class="form-control">
         </div>      
         <button ng-click="addContact()">Add Person</button>
-
+        </div>
+        </div>
     </div>
 </body>
 </html>
