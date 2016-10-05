@@ -19,32 +19,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
-<body>
+<body ng-cloak ng-controller="MainCtrl">
     <header>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <span class="navbar-brand">
+                    <button ng-click="seeContact()"><span class="navbar-brand">
                         Add Contacts
-                    </span>
+                    </span> </button>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container"  ng-cloak ng-controller="MainCtrl">
+    <div class="container">
         <div class="row">
-            <div class="col-md-3 col-offset-md-4">
+            <div class="col-md-3">
                 <h3> Contacts List </h3>
             <ul class="list-group">
  
-                <li class="list-group-item" ng-repeat="contact in contacts">
-                         <a href="seeContact()"> 
-                {{contact.firstName}} {{contact.lastName}} </a> {{contact.profession}} {{contact.phoneNumber}} {{contact.emailAddress}} 
-                </li> 
+                   <li class="list-group-item" ng-repeat="contact in contacts">
+                          
+             <button ng-click="seeInfo(contact)">{{contact.firstName}} {{contact.lastName}} 
+                </button></li> 
              </ul>
             </div> 
 
-        <div class="col-md-4">
+
+
+       
+        <div class="col-md-offset-4 col-md-4" ng-show="selectedContact">
         <div class="form-group">
             <label for="">First Name</label>
             <input type="text" ng-model="newContact.firstName" class="form-control">
@@ -67,7 +70,33 @@
         </div>      
         <button ng-click="addContact()">Add Person</button>
         </div>
+
+        <div class="col-md-offset-4 col-md-4" ng-show="info">
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" ng-model="info.firstName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" ng-model="info.lastName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" ng-model="info.profession" class="form-control">
+        </div> 
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" ng-model="info.phoneNumber" class="form-control">
+        </div>   
+        <div class="form-group">
+            <label for=""></label>
+            <input type="text" ng-model="info.emailAddress" class="form-control">
+        </div>      
+        </div>
+
         </div>
     </div>
+
+
 </body>
 </html>

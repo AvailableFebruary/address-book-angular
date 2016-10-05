@@ -32,8 +32,16 @@ function mainController($scope) {
         $scope.newContact = {};
     }
 
+
     $scope.seeContact = function() {
-        $scope.contacts;
+        $scope.selectedContact=true;
+        //$scope.newContact=contact;
+        $scope.info=null;
+    }
+
+    $scope.seeInfo = function(contact) {
+        $scope.info=contact;
+        $scope.selectedContact=null;
+    }
 
     }
-}
